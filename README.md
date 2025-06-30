@@ -1,4 +1,3 @@
-```markdown
 # 🔐 Password Generator
 
 A modern, web app to generate secure passwords with customizable options. Built using HTML, CSS (glassmorphism UI), and vanilla JavaScript.
