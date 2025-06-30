@@ -4,6 +4,10 @@ A modern, web app to generate secure passwords with customizable options. Built 
 
 ---
 
+## 📸 Preview
+
+![alt text](<Screenshot 2025-06-30 210747.png>)
+
 ## 🚀 Features
 
 - ✅ Adjustable password length (1 to 20 characters)
