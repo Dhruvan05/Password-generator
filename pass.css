@@ -1,0 +1,329 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --accent-light: #60a5fa;
+  --neutral-bg: #f9fafb;
+  --neutral-light: #f1f5f9;
+  --neutral-border: #e2e8f0;
+  --text-dark: #1e293b;
+  --text-medium: #475569;
+  --text-light: #94a3b8;
+  --green: #10b981;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to top left, var(--neutral-bg), var(--neutral-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+.container {
+  width: 480px;
+  height: 580px;
+  padding: 42px 38px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), inset 0 0 0.5px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+  transition: all 0.3s ease-in-out;
+}
+
+.container:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+}
+
+/* ==== Display Box ==== */
+.display-container {
+  background: var(--neutral-light);
+  border: 2px solid var(--neutral-border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.display-container input[type="text"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-dark);
+  font-size: 18px;
+  width: 100%;
+  letter-spacing: 1px;
+}
+
+.display-container input::placeholder {
+  color: var(--text-light);
+}
+
+.display-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.display-container img {
+  width: 22px;
+  filter: brightness(0.5);
+  transition: filter 0.25s ease;
+}
+
+.display-container button:hover img {
+  filter: brightness(0.2);
+}
+
+.display-container .clearBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding-right: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.display-container .clearBtn img {
+  width: 22px;
+  height: 24px;
+  filter: brightness(0.5);
+  transition: filter 0.25s ease;
+}
+
+.display-container .clearBtn:hover img {
+  filter: brightness(0.2);
+}
+
+
+/* ==== Tooltip ==== */
+.copy_tooltip {
+  position: absolute;
+  top: -30px;
+  right: 12px;
+  background-color: var(--green);
+  color: white;
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+/* Triangle arrow pointing down toward the icon */
+.copy_tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -3.9px;
+  right: 12px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--green);
+}
+
+
+
+
+/* ==== Input Controls ==== */
+.input_container {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.length_container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-medium);
+  margin-bottom: 14px;
+}
+
+/* ==== Slider ==== */
+.slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 12px;
+  background: var(--neutral-border);
+  appearance: none;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+  transition: background 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.695);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider:hover::-webkit-slider-thumb {
+  transform: scale(1.12);
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.35);
+}
+
+.slider:focus::-webkit-slider-thumb {
+  box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.4);
+}
+
+/* ==== Checkboxes ==== */
+.check_container {
+  margin: 30px 0 30px 0;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--text-dark);
+}
+
+.check input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.check input[type="checkbox"]:checked {
+  background: var(--primary);
+}
+
+.check input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+
+/* ==== Strength Indicator ==== */
+.strength-container {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.strength_txt {
+  font-weight: 500;
+  color: var(--text-medium);
+  margin-right: 12px;
+  font-size: 15px;
+}
+
+.strength-bar-container {
+  flex: 1;
+  height: 10px;
+  background-color: #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.strength-bar-fill {
+  height: 100%;
+  width: 0%;
+  background-color: #ef4444; /* default */
+  border-radius: 6px;
+  transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.strength-weak {
+  background-color: #ef4444;
+}
+.strength-medium {
+  background-color: #facc15;
+}
+.strength-strong {
+  background-color: #10b981;
+}
+
+/* ==== Generate Button ==== */
+.generateBtn {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 14px 20px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  margin-top: 15px;
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  letter-spacing: 0.4px;
+}
+
+.generateBtn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+}
+
+.generateBtn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.15);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

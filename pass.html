@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="pass.css">
+    <script src="pass.js" defer></script>
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="display-container">
+            <input type="text" readonly placeholder="Password" password_display>
+            <button class="clearBtn" title="Clear">
+            <img src="refresh-ccw.svg" alt="clear" width="22" height="22">
+            </button>
+            <button title="Copy" copy_button>
+                <span class="copy_tooltip" copy_msg>Copied</span>
+                <img src="copy-icon.svg" alt="copy" width="24" height="24">
+            </button>
+
+        </div>
+
+
+        <div class="input_container">
+            <div class="length_container">
+                <p>Password Length</p>
+                <p length_display></p>
+            </div>
+            <input type="range" min="1" max="20" step="1" class="slider" data-lengthslider="" style="background-size: 100% 100%;">
+            <div class="check_container">
+            <div class="check">
+                <input type="checkbox" id="uppercase">
+                <label for="uppercase">Include Uppercase Letters</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="lowercase">
+                <label for="lowercase">Include Lowercase Letters</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="numbers">
+                <label for="numbers">Include Numbers</label>
+            </div>
+            <div class="check">
+                <input type="checkbox" id="symbols">
+                <label for="symbols">Include Symbols</label>
+            </div>
+            </div>
+        <div class="strength-container">
+        <p class="strength_txt" id="strengthLabel">Strength</p>
+            <div class="strength-bar-container">
+                <div class="strength-bar-fill strength-weak" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        </div>
+        <button class="generateBtn">Generate Password</button>
+        </div>
+    </div>
+    
+</body>
+</html>
